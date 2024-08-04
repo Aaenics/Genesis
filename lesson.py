@@ -30,15 +30,15 @@ with mp_hands.Hands(
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     if results.multi_hand_landmarks:
-       
-        for hand_landmarks in results.multi_hand_landmarks:
+      
+      for hand_landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(
                 image,
                 hand_landmarks,
                 mp_hands.HAND_CONNECTIONS,
                 mp_drawing.DrawingSpec(color=(121, 22, 76), thickness=2, circle_radius=4),
                                         mp_drawing.DrawingSpec(color=(250, 44, 250), thickness=2, circle_radius=2),
-                                        )
+                )
             
             print(mp_hands.HAND_CONNECTIONS)
     # Flip the image horizontally for a selfie-view display.
